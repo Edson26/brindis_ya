@@ -1,0 +1,349 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brindis Ya</title>
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <!-- custom css file link  -->
+  <link href="{% static 'style.css' %}" rel="stylesheet" />
+
+  <!-- custom js file link  -->
+  <script src="{% static 'js/script.js' %}"></script>
+</head>
+
+<body>
+  <!-- header section starts  -->
+
+  <header class="header">
+    <a href="#" class="logo">
+      <img src="images/logo.jpg" alt="" />
+    </a>
+
+    <nav class="navbar">
+      <a href="#home">Inicio</a>
+      <a href="#about">Sobre nosotros</a>
+      <a href="#menu">Ofertas</a>
+      <a href="#review">Reseñas</a>
+      <a href="/login">Iniciar sesion</a>
+    </nav>
+  </header>
+
+  <!-- header section ends -->
+
+  <!-- home section starts  -->
+
+  <section class="home" id="home">
+    <div class="content">
+      <h3>Vas a volver a elegirnos!</h3>
+      <p>
+        ¡Disfruta de los mejores tragos de la región! Elaborados con ingredientes de primera calidad y entregados
+        directamente en tu hogar.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- home section ends -->
+
+  <!-- about section starts  -->
+
+  <section class="about" id="about" style="margin-top: 100px;">
+    <h1 class="heading">Nosotros</h1>
+
+    <div class="row">
+      <div class="image">
+        <img src="{% static 'images/nosotros.jpeg' %}" alt="" />
+      </div>
+
+      <div class="content">
+        <h3>Esta es nuestra historia!</h3>
+        <p>
+          Brindis Ya se especializó en la creación de cócteles personalizados, ofreciendo a sus clientes una experiencia
+          única en cada brindis. Desde fiestas privadas hasta eventos corporativos, su enfoque era claro, cada trago
+          debía contar una historia y celebrar momentos especiales. Con una variedad de ingredientes frescos y locales,
+          el equipo se dedicó a innovar y crear combinaciones sorprendentes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- about section ends -->
+
+  <!-- menu section starts  -->
+
+  <section class="menu" id="menu" style="margin-top: 200px;">
+    <h1 class="heading">Nuestras <span>Ofertas</span></h1>
+
+    <div class="box-container">
+      <div class="box">
+        <img src="{% static 'images/mojito.JPG' %}" alt="" />
+        <h3>Mojito</h3>
+        <div class="price">$10.990 <span>15.990</span></div>
+        <a href="https://wa.me/56955178836?text=Hola, quiero comprar un Mojito" target="_blank" class="btn">Comprar</a>
+      </div>
+
+      <div class="box">
+        <img src="{% static 'images/mojitosabores.jpeg' %}" alt="" />
+        <h3>Mojito Sabores</h3>
+        <div class="price">$7.990 <span>12.990</span></div>
+        <a href="https://wa.me/56955178836?text=Hola, quiero comprar un Mojito Sabores" target="_blank"
+          class="btn">Comprar</a>
+      </div>
+
+      <div class="box">
+        <img src="{% static 'images/piñacolada.jpeg' %}" alt="" />
+        <h3>Piña Colada</h3>
+        <div class="price">$9.500 <span>16.990</span></div>
+        <a href="https://wa.me/56955178836?text=Hola, quiero comprar una Piña Colada" target="_blank"
+          class="btn">Comprar</a>
+      </div>
+
+      <div class="box">
+        <img src="{% static 'images/tequilamargarita.jpeg' %}" alt="" />
+        <h3>Tequila Margarita</h3>
+        <div class="price">$8.990 <span>11.990</span></div>
+        <a href="https://wa.me/56955178836?text=Hola, quiero comprar un Tequila Margarita" target="_blank"
+          class="btn">Comprar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- menu section ends -->
+
+  <section class="products" id="products" style="margin-top: 200px;">
+    <h1 class="heading">Nuestros <span>productos</span></h1>
+
+    <div class="box-container">
+      <div class="box">
+        <div class="image">
+          <img src="{% static 'images/borgoña.jpeg' %}" alt="" />
+        </div>
+        <div class="content">
+          <h3>Borgoña</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <div class="price">$15.990</div>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart"></a>
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-eye"></a>
+        </div>
+        <div class="image">
+          <img src="{% static 'images/mojitosabores.jpeg' %}" alt="" />
+        </div>
+        <div class="content">
+          <h3>Mojito Sabores</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <div class="price">$15.990</div>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart"></a>
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-eye"></a>
+        </div>
+        <div class="image">
+          <img src="{% static 'images/piñacolada.jpeg' %}" alt="" />
+        </div>
+        <div class="content">
+          <h3>Piña Colada</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <div class="price">$15.990</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- review section starts  -->
+
+  <section class="review" id="review" style="margin-top: 200px;">
+    <h1 class="heading">Reseñas<span> Brindis Ya</span></h1>
+
+    <div class="box-container">
+      <div class="box">
+        <img src="{% static 'images/quote-img.png' %}" alt="" class="quote" />
+        <p>
+          Excelente servicio, pero me gustaria que la atención fuese un poco
+          mas rapida, quizas poder ver en la pagina que productos estan
+          disponibles para el envio
+        </p>
+        <img src="{% static 'images/pic-1.png' %}" class="user" alt="" />
+        <h3>Pablo</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="{% static 'images/quote-img.png' %}" alt="" class="quote" />
+        <p>
+          Excelentes tragos!! La variedad es impresionante, y cada uno de los
+          que probamos estaba delicioso. Los mojitos son los mejores.
+        </p>
+        <img src="{% static 'images/pic-2.png' %}" class="user" alt="" />
+        <h3>Sofia</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="{% static 'images/quote-img.png' %}" alt="" class="quote" />
+        <p>
+          Recientemente hice un pedido de tragos a través de su sitio web y no
+          puedo estar más satisfecho con la experiencia. Probé varios y todos
+          estaban bien elaborados. El sabor y la presentación superaron mis
+          expectativas
+        </p>
+        <img src="{% static 'images/pic-3.png' %}" class="user" alt="" />
+        <h3>Marcos</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- review section ends -->
+
+  <!-- contact section starts  -->
+
+  <section class="contact" id="contact">
+    <h1 class="heading"><span>Escribenos</span></h1>
+
+    <div class="row">
+      <iframe class="map"
+        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Temuco&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        allowfullscreen="" loading="lazy"></iframe>
+
+      <form action="">
+        <h3>Ponerse en contacto</h3>
+        <div class="inputBox">
+          <span class="fas fa-user"></span>
+          <input type="text" placeholder="Nombre" />
+        </div>
+        <div class="inputBox">
+          <span class="fas fa-envelope"></span>
+          <input type="email" placeholder="E-mail" />
+        </div>
+        <div class="inputBox">
+          <span class="fas fa-phone"></span>
+          <input type="number" placeholder="Número" />
+        </div>
+        <input type="submit" value="Contactar Ahora" class="btn" />
+      </form>
+    </div>
+  </section>
+
+  <!-- contact section ends -->
+
+  <!-- blogs section starts  -->
+
+  <section class="blogs" id="blogs" style="margin-top: 200px;">
+    <h1 class="heading">Nuestro <span> blog</span></h1>
+
+    <div class="box-container">
+      <div class="box">
+        <div class="image">
+          <img src="{% static 'images/mojitos.jpg' %}" alt="" />
+        </div>
+        <div class="content">
+          <a href="#" class="title">Tragos Refrescantes</a>
+          <span>Marcos / 14 marzo, 2022</span>
+          <p>
+            Excelentes mojitos y muy refrescantes, volveria a comprar 100%
+          </p>
+
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="image">
+          <img src="{% static 'images/mojitos.jpg' %}" alt="" />
+        </div>
+        <div class="content">
+          <a href="#" class="title">Tragos Refrescantes</a>
+          <span>Pablo / 21 mayo, 2021</span>
+          <p>
+            Excelentes mojitos y muy refrescantes, volveria a comprar 100%
+          </p>
+
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="image">
+          <img src="{% static 'images/mojitos.jpg' %}" alt="" />
+        </div>
+        <div class="content">
+          <a href="#" class="title">Tragos Refrescantes</a>
+          <span>Sofia / 05 septiembre, 2022</span>
+          <p>
+            Excelentes mojitos y muy refrescantes, volveria a comprar 100%
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- blogs section ends -->
+
+  <!-- footer section starts  -->
+
+  <section class="footer">
+    <div class="share">
+      <a href="#" class="fab fa-facebook-f"></a>
+      <a href="#" class="fab fa-instagram"></a>
+      <a href="https://wa.me/999887766" class="fab fa-whatsapp"></a>
+    </div>
+
+    <div class="credit">
+      Creado por <span>Brindis Ya</span> | Todos Los Derechos Reservados ©
+    </div>
+  </section>
+</body>
+
+</html>
