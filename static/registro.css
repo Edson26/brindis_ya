@@ -1,0 +1,46 @@
+.contenedor{
+    margin: 0;
+    padding: 0;
+    background: url(images/mojito_home.jpeg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.login-box button {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #b80f22;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+
+  .login-box button:hover {
+    cursor: pointer;
+    background: #7f8180;
+    color: #000;
+  }
+
+  p{
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+  }
+
+  .login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+  }
+
+  .login-box a:hover {
+    color: #fff;
+  }
