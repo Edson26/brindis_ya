@@ -28,10 +28,21 @@ urlpatterns = [
     path('recetas/', views.listaRecetas, name='listaRecetas'),
     path('ingredientes/', views.listaIngredientes, name='listaIngredientes'),
     path('cocteles/', views.listaCoctel, name='cocteles'),
+    
     path('agregartrabajador/', views.agregarTrabajador, name='agregarTrabajador'),
     path('agregarreceta/', views.agregarReceta, name='agregarReceta'),
     path('agregaringrediente/', views.agregarIngrediente, name='agregarIngrediente'),
     path('agregarcoctel/', views.agregarCoctel, name='agregarCoctel'),
-    path('actualizar/<int:id>', views.actualizarTrabajador, name='actualizarTrabajador'),
-    path('eliminar/<int:id>', views.eliminarTrabajador, name='eliminarTrabajador'),
+    
+    path('actualizarTrabajador/<int:id>', views.actualizarTrabajador, name='actualizarTrabajador'),
+    path('eliminarTrabajador/<int:id>', views.eliminarTrabajador, name='eliminarTrabajador'),
+    
+    path('actualizarIngrediente/<int:id>', views.actualizarIngrediente, name='actualizarIngrediente'),
+    path('eliminarIngrediente/<int:id>', views.eliminarIngrediente, name='eliminarIngrediente'),
+    
+    path('actualizarCoctel/<int:id>', views.actualizarCoctel, name='actualizarCoctel'),
+    path('eliminarCoctel/<int:id>', views.eliminarCoctel, name='eliminarCoctel'),
+    
+    path('actualizarReceta/<int:id>', views.actualizarReceta, name='actualizarReceta'),
+    path('eliminarReceta/<int:id>', views.eliminarReceta, name='eliminarReceta'),
 ]

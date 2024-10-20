@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,19 +8,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
+    <link rel="stylesheet" href="{% static 'master.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <title>Gestion de Ingredientes</title>
 </head>
 <body class="container mt-5">
-    <div class="alert alert-info display-1 text-center">LISTADO DE INGREDIENTES</div>
-    {% if ingredientes %}
+    {% block content %}
+    <div class="alert alert-info display-5 mt-3 text-center">LISTADO DE INGREDIENTES</div>
+
+    <div class="ingredientes mt-3 bg bg-light">
+        {% if ingredientes %}
     <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
+                <th>Cantidad</th>
+                <th class="text-center">Opciones</th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +34,9 @@
             <tr>
                 <td scope="row">{{ing.id}}</td>
                 <td>{{ing.nombre}}</td>
+                <td>{{ing.cantidad}}</td>
+                <td><a class="btn btn-warning" href="{% url 'actualizarIngrediente' ing.id %}">Editar</a></td>
+                <td><a class="btn btn-danger" href="{% url 'eliminarIngrediente' ing.id %}">Eliminar</a></td>
             </tr>
             {% endfor %}
         </tbody>
@@ -34,8 +46,9 @@
         <strong>No se encuentran ingredientes en el sistema</strong>
     </div>
     {% endif %}
-
-    <a href="/base" class="btn btn-danger">Volver</a>
-    <a href="../agregaringrediente" class="btn btn-info float-end">Agregar Ingrediente</a>
+    </div>
+    
+    <a href="../agregaringrediente" class="btn btn-info float-start">Agregar Ingrediente</a>
+    {% endblock %}
 </body>
 </html>

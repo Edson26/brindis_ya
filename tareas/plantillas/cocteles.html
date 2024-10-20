@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,14 +8,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
+    <link rel="stylesheet" href="{% static 'master.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <title>Gestion de Cocteles</title>
 </head>
 <body class="container mt-5">
-    <div class="alert alert-info display-1 text-center">LISTADO DE COCTELES</div>
-    {% if cocteles %}
+
+    {% block content %}
+    <div class="alert alert-info display-5 text-center mt-3">LISTADO DE COCTELES</div>
+
+    <div class="cocteles mt-3 bg bg-light">
+        {% if cocteles %}
     <table class="table">
         <thead>
             <tr>
@@ -21,6 +29,7 @@
                 <th>Cantidad</th>
                 <th>Precio</th>
                 <th>Ingredientes</th>
+                <th class="text-center">Opciones</th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +40,8 @@
                 <td>{{coctel.cantidad}}</td>
                 <td>{{coctel.precio}}</td>
                 <td>{{coctel.ingrediente}}</td>
+                <td><a class="btn btn-warning" href="{% url 'actualizarCoctel' coctel.id %}">Editar</a></td>
+                <td><a class="btn btn-danger" href="{% url 'eliminarCoctel' coctel.id %}">Eliminar</a></td>
             </tr>
             {% endfor %}
         </tbody>
@@ -40,8 +51,10 @@
         <strong>No se encuentran cocteles en el sistema</strong>
     </div>
     {% endif %}
-
-    <a href="/base" class="btn btn-danger">Volver</a>
-    <a href="../agregarcoctel" class="btn btn-info float-end">Agregar Coctel</a>
+    </div>
+    
+    
+    <a href="../agregarcoctel" class="btn btn-info float-start">Agregar Coctel</a>
+    {% endblock %}
 </body>
 </html>

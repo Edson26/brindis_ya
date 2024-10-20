@@ -5,12 +5,10 @@ class FormTrabajador(forms.ModelForm):
     class Meta:
         model = Trabajador
         fields = '__all__'
-
 class FormIngrediente(forms.ModelForm):
     class Meta:
         model = Ingrediente
         fields = '__all__'
-
 class FormReceta(forms.ModelForm):
     class Meta:
         model = Receta
