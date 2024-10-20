@@ -3,51 +3,56 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-    <link rel="stylesheet" href="{% static 'master.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <title>Gestion de Recetas</title>
-</head>
-<body class="container mt-5">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS only -->
+        <link rel="stylesheet" href="{% static 'master.css' %}">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
+        <title>Gestion de Recetas</title>
+    </head>
+    <body class="container mt-5">
 
-    {% block content %}
-    <div class="alert alert-info display-5 text-center mt-3">LISTADO DE RECETAS</div>
-    
-    <div class="recetas mt-2 bg bg-light">
+        {% block content %}
+        <div class="alert alert-info display-5 text-center mt-3">LISTADO DE
+            RECETAS</div>
+
         {% if recetas %}
-    <table class="table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th class="text-center">Opciones</th>
-            </tr>
-        </thead>
-        <tbody>
+        <div class="recetas mt-2 bg bg-light d-flex">
             {% for receta in recetas %}
-            <tr>
-                <td scope="row">{{receta.id}}</td>
-                <td>{{receta.nombre}}</td>
-                <td><a class="btn btn-warning" href="{% url 'actualizarReceta' receta.id %}">Editar</a></td>
-                <td><a class="btn btn-danger" href="{% url 'eliminarReceta' receta.id %}">Eliminar</a></td>
-            </tr>
+            <div class="card mx-3 my-3" style="width: 18rem;">
+                <img src="{% static 'images/mojito_home_3.jpeg' %}" class="card-img-top" alt="mojito">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{receta.nombre}}</h5>
+                    <p class="card-text">Some quick example text to build on the
+                    card title and make up the bulk of the card's
+                    content.</p>
+                </div>
+                <div class="botones d-flex align-items-center justify-content-center gap-1 mb-3">
+                    <a class="btn btn-warning" href="{% url 'actualizarReceta' receta.id %}">Editar</a>
+                    <a class="btn btn-danger" href="{% url 'eliminarReceta' receta.id %}">Eliminar</a>
+                </div>
+            </div>
             {% endfor %}
-        </tbody>
-    </table>
-    {% else %}
-    <div class="alert alert-warning" role="alert">
-        <strong>No se encuentran recetas en el sistema</strong>
-    </div>
-    {% endif %}
-    </div>
-    
-    <a href="../agregarreceta" class="btn btn-info float-start">Agregar Receta</a>
-    {% endblock %}
-</body>
+        </div>
+        {% else %}
+        <div class="alert alert-warning" role="alert">
+            <strong>No se encuentran recetas en el sistema</strong>
+        </div>
+        {% endif %}
+
+        <a href="../agregarreceta" class="btn btn-info float-start">Agregar
+            Receta</a>
+        {% endblock %}
+    </body>
 </html>

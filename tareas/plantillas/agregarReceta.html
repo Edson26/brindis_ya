@@ -21,8 +21,8 @@
     <div class="recetas bg bg-light">
         <form method="post">
             <table class="table">
-                {{form.as_table}}
                 {% csrf_token %}
+                {{form.as_table}}
             </table>
             <input type="submit" value="Guardar" class="btn btn-success">
         </form>
